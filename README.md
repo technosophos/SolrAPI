@@ -56,9 +56,12 @@ Solr is an advanced search server built atop the equally advanced Lucene search 
 
 This module was coded against the Drupal coding standards. Documentation can be extracted with Doxygen.
 
+* More information is in the [wiki](http://github.com/technosophos/SolrAPI/wiki)
+
 ## License
 
 This is released under the GPL for Drupal compatibility. You may also opt to use it in accordance with the MIT license.
 
 Copyright (c) 2010, Matt Butcher
+
 Sponsored by [ConsumerSearch.com](http://consumersearch.com), a New York Times company.
