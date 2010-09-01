@@ -843,7 +843,7 @@ class SolrAPI {
   public function drupalDefaultQueryFields() {
     
     if (!function_exists('variable_get')) {
-      throw new Exception('No such function as variable_get. This does not look like Drupal.')
+      throw new Exception('No such function as variable_get. This does not look like Drupal.');
     }
     
     $qf = variable_get('apachesolr_search_query_fields', array());
