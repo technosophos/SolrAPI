@@ -154,7 +154,7 @@
  * @see http://code.google.com/p/solr-php-client/ The Solr PHP Client library.
  */
 function solrq($query = NULL,  Apache_Solr_Service $solr = NULL) {
-  return new SolrAPI($query);
+  return new SolrAPI($query, $solr);
 }
 
 /**
