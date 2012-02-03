@@ -1,0 +1,37 @@
+{
+
+  "name": "technosophos/SolrAPI",
+  "description": "A chainging (fluent, builder) API for querying Apache Solr.",
+  "type": "library",
+  "keywords": ["solr", "apache solr", "search", "query"],
+  "homepage": "https://github.com/technosophos/SolrAPI",
+  "license": "MIT or GPLv2",
+
+  "authors": [
+    {"name": "M Butcher", "homepage": "http://technosophos.com"}
+  ],
+
+  "repositories": {
+    "solr-php-client": {
+      "package": {
+        "name": "solr-php-client/SolrPhpClient",
+        "version": "0.0.60",
+        "dist": {
+          "url": "http://code.google.com/p/solr-php-client/downloads/detail?name=SolrPhpClient.r60.2011-05-04.zip&can=2&q=",
+          "type": "zip"
+        },
+        "source": {
+          "url": "http://solr-php-client.googlecode.com/svn/trunk/",
+          "type": "svn",
+          "reference": "r60"
+        }
+      }
+
+    }
+  },
+
+  "require": {
+    "php": ">=5.3.0",
+    "solr-php-client/SolrPhpClient" : ">=0.0.20"
+  }
+}
