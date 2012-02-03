@@ -1,7 +1,7 @@
 {
 
   "name": "technosophos/SolrAPI",
-  "description": "A chainging (fluent, builder) API for querying Apache Solr.",
+  "description": "A chaining (fluent, builder) API for querying Apache Solr.",
   "type": "library",
   "keywords": ["solr", "apache solr", "search", "query"],
   "homepage": "https://github.com/technosophos/SolrAPI",
