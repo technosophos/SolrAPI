@@ -30,8 +30,8 @@
  * 
  * To that end the developer is left on her own when it comes to constructing complex queries.
  *
- * This library also fully supports chains of filters. See the {@link SolrAPI::filters()} 
- * and {@link SolrAPI::mergeFilters()} methods.
+ * This library also fully supports chains of filters. See the {@link SolrAPI::Query::filters()} 
+ * and {@link SolrAPI::Query::mergeFilters()} methods.
  *
  *
  * @file
@@ -200,7 +200,7 @@ class Query {
    * other than those two.
    *
    * @param $parser
-   *  The string name of the parser to use. See the SolrAPI::QUERY_PARSER_*
+   *  The string name of the parser to use. See the SolrAPI::Query::QUERY_PARSER_*
    *  params.
    * @return 
    *  - setter: This object

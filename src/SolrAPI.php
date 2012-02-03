@@ -31,8 +31,8 @@
  * 
  * To that end the developer is left on her own when it comes to constructing complex queries.
  *
- * This library also fully supports chains of filters. See the {@link SolrAPI::filters()} 
- * and {@link SolrAPI::mergeFilters()} methods.
+ * This library also fully supports chains of filters. See the {@link SolrAPI::Query::filters()} 
+ * and {@link SolrAPI::Query::mergeFilters()} methods.
  *
  *
  *
@@ -45,12 +45,13 @@
  * Use this to create a new query. It is a "factory function" that returns
  * a new SolrAPI object. This is the preferred method used for constructing a 
  * query against a Solr server. (If you really prefer strong OO syntax, you 
- * can forgo using this method, and use <code>new SolrAPI()</code>.)
+ * can forgo using this method, and use <code>new \SolrAPI\Query()</code>.)
  *
  * <b>API usage examples</b>
  * 
  * Simple example:
  * <code>
+ * require_once 'SolrAPI.php';
  * $results = solrq('blue smurf')->search();
  * </code>
  * The above executes a simple search for the string 'blue smurf'.
