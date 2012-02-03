@@ -30,6 +30,10 @@
     }
   },
 
+  "autoloader": {
+    "psr-0": {"SolrAPI": "src/"}
+  },
+
   "require": {
     "php": ">=5.3.0",
     "solr-php-client/SolrPhpClient" : ">=0.0.20"
