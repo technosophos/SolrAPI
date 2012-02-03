@@ -49,37 +49,60 @@ To use this under Drupal, you merely need to install and configure the `apacheso
 
 ## Using the library
 
+Since SolrAPI uses a function, and functions cannot be autoloaded, if
+you want to use `solarq()` you will need to do this:
+
+```php
+<?php
+require_once 'SolrAPI.php';
+?>
+```
+
+If you would rather have SPR-0 autoloading, and don't care about the
+`solarq()` function, you can put the `SolrAPI` source in your include
+path, turn on your autoloader, and use `SolrAPI` like this:
+
+```php
+<?php
+$query = new \SolrAPI\Query($string, $options);
+
+$query->search();
+?>
+```
+
+The query object can be chained just like a `solrq()` can.
+
 The code is documented very well. Here's a simple example of how this library is used:
 
-```
-    <?php
-    // Execute a search
-    $results = solrq('Search me')->search();
-    
-    // $result now has a SolrPHPClient search result object.
-    foreach ($results->response->docs as $doc)) {
-      print $doc->title;
-    }
-    ?>
+```php
+<?php
+// Execute a search
+$results = solrq('Search me')->search();
+
+// $result now has a SolrPHPClient search result object.
+foreach ($results->response->docs as $doc)) {
+  print $doc->title;
+}
+?>
 ```
 
 The above executes a simple query for the string 'Search me'. Far more sophisticated queries can be built, though:
 
 ```php
-    <?php
-    $results = solrq('monkey wrench')
-       ->useQueryParser(SolrAPI::QUERY_PARSER_DISMAX) // Use the DisMax parser.
-       ->limit(20)           // Return 20 items
-       ->offset(1)           // Skip the first result (why? I don't know... this is just an example)
-       ->boostQueries('sticky:true^5.0')     // Increase ranking on sticky nodes.
-       ->queryFields('title^5.0 body^20.0')   // Fields to query, along with their boosts.
-       ->retrieveFields('title, body')       // just get the title and body.
-       ->highlight()        // Highlight matches in title and body.
-       ->spellcheck()       // Check spelling on query string ('blue smurf') and offer alternatives
-       ->sort('title asc')  // Sort by title, ascending
-       ->debug(TRUE)        // Include debugging info in the output.
-       ->search();          // Execute the search.
-    ?>
+<?php
+$results = solrq('monkey wrench')
+   ->useQueryParser(SolrAPI::QUERY_PARSER_DISMAX) // Use the DisMax parser.
+   ->limit(20)           // Return 20 items
+   ->offset(1)           // Skip the first result (why? I don't know... this is just an example)
+   ->boostQueries('sticky:true^5.0')     // Increase ranking on sticky nodes.
+   ->queryFields('title^5.0 body^20.0')   // Fields to query, along with their boosts.
+   ->retrieveFields('title, body')       // just get the title and body.
+   ->highlight()        // Highlight matches in title and body.
+   ->spellcheck()       // Check spelling on query string ('blue smurf') and offer alternatives
+   ->sort('title asc')  // Sort by title, ascending
+   ->debug(TRUE)        // Include debugging info in the output.
+   ->search();          // Execute the search.
+?>
 ```
 
 Solr is an advanced search server built atop the equally advanced Lucene search engine. To get the most out of this library, you will probably want to become very familiar with [the Solr documentation](http://wiki.apache.org/solr).
