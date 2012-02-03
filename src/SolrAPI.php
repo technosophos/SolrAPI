@@ -39,6 +39,9 @@
  * @see http://code.google.com/p/solr-php-client/ The Solr PHP Client library.
  */
 
+// In case autoloader is not being used.
+require_once 'SolrAPI/Query.php';
+
 /**
  * The main Solr API function.
  *
