@@ -17,7 +17,7 @@
         "name": "solr-php-client/SolrPhpClient",
         "version": "0.0.60",
         "dist": {
-          "url": "http://code.google.com/p/solr-php-client/downloads/detail?name=SolrPhpClient.r60.2011-05-04.zip&can=2&q=",
+          "url": "http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip",
           "type": "zip"
         },
         "source": {
